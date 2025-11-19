@@ -1,0 +1,34 @@
+# ADK Configuration for Dearly
+project:
+  name: "Dearly"
+  version: "0.1.0"
+  description: "A Memory-Pattern Companion"
+
+agents:
+  - name: "root_agent"
+    type: "llm"
+    model: "gemini-2.5-flash"
+    description: "Main orchestrator agent for Dearly"
+    instruction_file: "agent.py"
+
+tools:
+  - name: "load_memories_tool"
+    description: "Load memories from text files"
+    function: "load_memories_tool"
+    
+  - name: "get_companion_response"
+    description: "Generate companion responses"
+    function: "get_companion_response"
+
+settings:
+  memory:
+    type: "in_memory"
+    max_sessions: 100
+  
+  safety:
+    enable_content_filter: true
+    enable_sentiment_monitoring: true
+    
+  logging:
+    level: "INFO"
+    output: "console"

@@ -1,0 +1,7 @@
+# Dearly - A Memory-Pattern Companion
+# Requirements file
+
+# Core dependencies
+google-adk>=1.18.0
+
+# Additional dependencies for utilities
